@@ -1,0 +1,101 @@
+<div class="easyui-panel" title="系统配置" style="width:100%;max-width:600px;padding:30px 60px;">
+    <div style="margin-bottom:20px">
+        <label class="label-top">密码表单禁用:</label>
+        <input class="easyui-passwordbox" prompt="Password" iconWidth="28" style="width:100%;"
+               data-options="disabled:true">
+    </div>
+    <div style="margin-bottom:20px">
+        <label class="label-top">带图标按钮的表单:</label>
+        <input class="easyui-textbox" data-options="iconCls:'icon-search'" style="width:100%">
+    </div>
+    <div style="margin-bottom:20px">
+        <label class="label-top">带多个图标按钮的表单:</label>
+        <input class="easyui-textbox" data-options="icons:[{
+                        iconCls:'icon-add'
+                    },{
+                        iconCls:'icon-cut'
+                    }]" style="width:100%">
+    </div>
+
+    <div style="margin-bottom:20px">
+        <label class="label-top">搜索表单禁用:</label>
+        <input class="easyui-searchbox" style="width:100%;" data-options="disabled:true" value="输入您要搜索的内容">
+    </div>
+    <div style="margin-bottom:20px">
+        <label class="label-top" style="display:block;">选择搜索表单:</label>
+        <input class="easyui-searchbox" data-options="prompt:'Please Input Value',menu:'#mm1111',searcher:doSearch"
+               style="width:300px"></input>
+        <div id="mm1111">
+            <div data-options="name:'all',iconCls:'icon-ok'">All News</div>
+            <div data-options="name:'sports'">Sports News</div>
+        </div>
+        <script>
+            function doSearch(value, name) {
+                alert('You input: ' + value + '(' + name + ')');
+            }
+        </script>
+    </div>
+    <div style="margin-bottom:20px">
+        <label class="label-top">数值表单:</label>
+        <input type="text" class="easyui-numberbox" style="width:100%;" value="100"
+               data-options="min:0,precision:2"></input>
+    </div>
+    <div style="margin-bottom:20px">
+        <label class="label-top">数值前缀表单:</label>
+        <input type="text" class="easyui-numberbox" style="width:100%;" value="100"
+               data-options="min:0,precision:2,prefix:'￥'"></input>
+    </div>
+    <div style="margin-bottom:20px">
+        <label class="label-top">数值后缀表单:</label>
+        <input type="text" class="easyui-numberbox" style="width:100%;" value="100"
+               data-options="min:0,precision:2,suffix:'€'"></input>
+    </div>
+    <div style="margin-bottom:20px">
+        <label class="label-top" style="width:100%; display:block;">日期输入框:</label>
+        <input type="text" class="easyui-datebox"></input>
+    </div>
+    <div style="margin-bottom:20px">
+        <label class="label-top" style="width:100%; display:block;">日期时间输入框:</label>
+        <input type="text" class="easyui-datetimebox" style="width:200px;"></input>
+    </div>
+    <div style="margin-bottom:20px">
+        <label class="label-top" style="width:100%; display:block;">日期时间微调框:</label>
+        <input class="easyui-datetimespinner" style="width:300px">
+    </div>
+    <div style="margin-bottom:20px">
+        <label class="label-top" style="width:100%; display:block;">数字微调框:</label>
+        <input class="easyui-numberspinner" style="width:80px;" required data-options="min:10,max:100,editable:false">
+    </div>
+    <div style="margin-bottom:20px">
+        <label class="label-top" style="width:100%; display:block;">货币微调框:</label>
+        <input class="easyui-numberspinner" value="1234567890" style="width:150px;"
+               data-options="required:true,precision:2,groupSeparator:',',decimalSeparator:'.',prefix:'$'"/>
+    </div>
+
+    <div style="margin-bottom:20px">
+        <label class="label-top" style="width:100%; display:block;">数字微调框:</label>
+        <input class="easyui-numberspinner" value="30" data-options="spinAlign:'right'" style="width:100%;">
+    </div>
+    <div style="margin-bottom:20px">
+        <label class="label-top" style="width:100%; display:block;">数字微调框:</label>
+        <input class="easyui-numberspinner" value="30" data-options="spinAlign:'left'" style="width:100%;">
+    </div>
+    <div style="margin-bottom:20px">
+        <label class="label-top" style="width:100%; display:block;">数字微调框:</label>
+        <input class="easyui-numberspinner" value="30" data-options="spinAlign:'horizontal'">
+    </div>
+    <div style="margin-bottom:20px">
+        <label class="label-top" style="width:100%; display:block;">数字微调框（等待官方修复）:</label>
+        <input class="easyui-numberspinner" value="30" data-options="spinAlign:'vertical'"
+               style="width:100%;max-width:60px;text-align:center">
+    </div>
+
+    <div style="margin-bottom:20px">
+        <label class="label-top">多行文本:</label>
+        <input class="easyui-textbox" style="width:100%; height:80px;" data-options="multiline:true">
+    </div>
+
+    <div>
+        <a href="#" class="easyui-linkbutton" iconCls="icon-ok" style="width:100%;height:32px">Register</a>
+    </div>
+</div>

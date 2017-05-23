@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}
+    MUSER大数据管理平台
+{% endblock %}
+
+{% block styles %}
+    <style type="text/css">
+        .layout-panel-west {
+            border-right: 1px solid #c5c5c5;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <body class="easyui-layout">
+    <div data-options="region:'north',border:false,bodyCls:'theme-header-layout'">
+        <div class="theme-navigate">
+            <div class="left">
+                <a href="#" onClick="$.insdep.control('/static/pages/mainPanel.html')"
+                   class="easyui-linkbutton">主面板</a>
+                {#                <a href="#" onClick="$.insdep.control('/static/pages/muserData.html')"#}
+                {#                   class="easyui-linkbutton">数据管理</a>#}
+                {#                <a href="#" onClick="$.insdep.control('/static/pages/monitor.html')"#}
+                {#                   class="easyui-linkbutton">NoSQL监控</a>#}
+                <a href="#" onClick="$.insdep.control('/static/pages/nosql.html')"
+                   class="easyui-linkbutton">Cassandra管理</a>
+                <a href="#" onClick="$.insdep.control('/static/pages/setting.html')"
+                   class="easyui-linkbutton">系统配置</a>
+            </div>
+            <div class="right">
+                <a href="#" class="easyui-menubutton theme-navigate-more-button"
+                   data-options="menu:'#more',hasDownArrow:false"></a>
+                <div id="more" class="theme-navigate-more-panel">
+                    <div>个人信息</div>
+                    <div>修改密码</div>
+                    <div>关于</div>
+                </div>
+                <a href="#" class="easyui-linkbutton" target="_blank">退出</a>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div data-options="region:'center',title:'预览'">
+        <div class="easyui-panel" id="control" data-options="fit:true,border:false"
+             style="padding:20px; background:#fff;">
+        </div>
+    </div>
+    </body>
+{% endblock %}
+
+{% block scripts %}
+    <!--第三方插件加载-->
+    <script src="/static/plugins/justgage-1.2.2/raphael-2.1.4.min.js"></script>
+    <script src="/static/plugins/justgage-1.2.2/justgage.js"></script>
+    <script src="/static/plugins/Highcharts-5.0.0/js/highcharts.js"></script>
+    <!--第三方插件加载结束-->
+    <script language="JavaScript" type="text/javascript" src="/static/this/js/index.js"></script>
+    <script>
+        $(function () {
+            $.insdep.control('/static/pages/mainPanel.html')
+        });
+    </script>
+{% endblock %}

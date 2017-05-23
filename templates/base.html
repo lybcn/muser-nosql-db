@@ -1,0 +1,30 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="edge"/>
+    <title>{% block title %} 标题 {% endblock %}</title>
+    <link href="/static/easyui/themes/insdep/easyui.css" rel="stylesheet" type="text/css">
+    <link href="/static/easyui/themes/insdep/easyui_plus.css" rel="stylesheet" type="text/css">
+    <link href="/static/easyui/themes/insdep/insdep_theme_default.css" rel="stylesheet" type="text/css">
+    <link href="/static/easyui/themes/icon.css" rel="stylesheet" type="text/css">
+    <script language="JavaScript" type="text/javascript" src="/static/easyui/jquery.min.js"></script>
+    <script language="JavaScript" type="text/javascript" src="/static/jquery/jquery.cookie.js"></script>
+    <script language="JavaScript" type="text/javascript" src="/static/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="/static/easyui/themes/insdep/jquery.insdep-extend.min.js"></script>
+    <link href="/static/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/static/this/css/index.css" rel="stylesheet">
+    <script type="application/javascript">
+        var csrftoken = getCookie('csrftoken');
+        $.ajaxSetup({
+            data: {csrfmiddlewaretoken: csrftoken},
+        });
+    </script>
+    {% block styles %}<!--custom styles-->{% endblock %}
+</head>
+<body>
+{% block content %}内容{% endblock %}
+</body>
+{% block scripts %}
+    <!--custom scripts-->
+{% endblock %}
+</html>
