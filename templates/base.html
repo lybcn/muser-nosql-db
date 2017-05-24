@@ -13,12 +13,6 @@
     <script type="text/javascript" src="/static/easyui/themes/insdep/jquery.insdep-extend.min.js"></script>
     <link href="/static/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="/static/this/css/index.css" rel="stylesheet">
-    <script type="application/javascript">
-        var csrftoken = getCookie('csrftoken');
-        $.ajaxSetup({
-            data: {csrfmiddlewaretoken: csrftoken},
-        });
-    </script>
     {% block styles %}<!--custom styles-->{% endblock %}
 </head>
 <body>

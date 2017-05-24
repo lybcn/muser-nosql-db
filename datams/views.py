@@ -36,16 +36,14 @@ def query(request):
         cluster = Cluster(['222.197.221.227', '222.197.221.225', '222.197.221.233'])
         session = cluster.connect('muserdatadb')
         session.row_factory = dict_factory
-        query = 'select time,filename,frequence,kind,offset,polarization from muserdata limit 5'
+        query = 'select time,filename,frequence,kind,offset,polarization from muserdata limit 50'
         sql = SimpleStatement(query, consistency_level=ConsistencyLevel.LOCAL_ONE)
         rows = session.execute(sql)
         list = []
         for row in rows:
             list.append(row)
-        final_result = {'total': len(list), "row": list}
+        final_result = {'total': len(list), "rows": list}
         json_string = json.dumps(final_result)
-        html = "<html><body>%s</body></html>" % json_string
+        return HttpResponse(json_string)
     except Exception as err:
-        html = "<html><body>%s</body></html>" % err
-    finally:
-        return HttpResponse(html)
+        return HttpResponse({'status': 'failure'})
